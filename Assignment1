@@ -1,5 +1,5 @@
 #include <stdio.h>
-int getdata();
+int getdata()
 {
     int a;
     printf("Enter a number: ");
@@ -18,7 +18,7 @@ void output(int a, int r)
     printf("%d + 1 = %d",a,r);
 }
 
-int main(void)
+int main()
 {
     int a=getdata();
     int r=logic(a);
