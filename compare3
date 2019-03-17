@@ -1,0 +1,51 @@
+#include<stdio.h>
+#include<conio.h>
+int get()
+{
+    int a;
+    printf("enter the number\n");
+    scanf("%d",&a);
+    return a;
+}
+int logic(int a,int b, int c)
+{
+    if(a>c && a>b)
+    {
+      printf("%d is the gretest\n",a);
+    }
+
+    if(b>a && b>c)
+    {
+        printf("%d is greatest\n",b);
+    }
+    
+    if(c>a && c>b)
+    {
+    printf("%d is the greatest\n",c);
+    }
+    if(a==b)
+    {
+        if(b==c)
+        printf("all are equal\n");
+        if(b>c)
+        printf("%d is greatest number\n",a);
+        if(b<c)
+        printf("%d is greatest\n",c);
+    }
+    if(b==c)
+    {
+        if(b>a)
+        printf("%d is greatest\n",b);
+        if(b<a)
+        printf("%d is greatest\n",a);
+    }
+}
+void main()
+{
+    int a,b,c;
+    a=get();
+    b=get();
+    c=get();
+    logic(a,b,c);
+    
+}
