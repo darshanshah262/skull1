@@ -12,41 +12,21 @@ int logic(int a,int b, int c)
     if(a>c)
     {
         if(a>b)
-        printf("%d is the gretest",a);
-
-    if(b>a)
-   
-        printf("%d is greatest",b);
+         return a;
+        if(b>a)
+         return b;
     }
     
     if(c>a)
     {
         if(c>b)
-    printf("%d is the greatest",c);
+         return c;
     }
-    if(a==b)
-    {
-        if(b==c)
-        printf("all are equal");
-        if(b>c)
-        printf("%d is greatest",a);
-        if(b<c)
-        printf("%d is greatest",c);
-    }
-    if(b==c)
-    {
-        if(b>a)
-        printf("%d is greatest",b);
-        if(b<a)
-        printf("%d is greatest",a);
-    }
-      if(a==c)
-    {
-        if(b>a)
-        printf("%d is greatest",b);
-        if(b<a)
-        printf("%d is greatest",a);
-    }
+   
+}
+int output()
+{
+printf();
 }
 void main()
 {
