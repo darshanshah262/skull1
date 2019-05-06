@@ -1,28 +1,27 @@
+
 #include<stdio.h>
-int input(int n);
-int compute(int a[],int n);
+void input(int n,int a[]);
+int compute(int n,int a[]);
 void output(int sum);
 int main()
 {
         int a[100],n,s;
         printf("Enter the number of elemnts\n");
         scanf("%d",&n);
-        a[100]=input(n);
-        s=compute(a,n);
+        input(n,a);
+        s=compute(n,a);
         output(s);
 }
-int input(int n)
+void input(int n,int a[n])
 {
-        int i,a[100];
-        printf("Enter the nuber of elementsn");
+        int i;
+        printf("Enter the elements to be added\n");
         for(i=0;i<n;i++)
         {
                 scanf("%d",&a[i]);
-                return a[i];
         }
-
 }
-int compute(int a[],int n)
+int compute(int n,int a[n])
 {
         int i,sum=0;
         for(i=0;i<n;i++)
@@ -35,3 +34,6 @@ void output(int sum)
 {
         printf("The sum is:%d\n",sum);
 }
+
+
+
