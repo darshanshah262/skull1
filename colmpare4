@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<conio.h>
 int get()
 {
     int a;
@@ -11,24 +10,19 @@ int logic(int a,int b, int c)
 {
     int s;
   s=(a>b) ? (a>c) ? a:c :(b>c)? b:c;
-  printf("%d is greatest",s);
-  if(a==b)
-    {
-        if(b==c)
-        printf("all are equal\n");
-        if(b>c)
-        printf("%d is greatest number\n",a);
-        if(b<c)
-        printf("%d is greatest\n",c);
-    }
- 
+  return s;
 }
-void main()
+void output(int s)
 {
-    int a,b,c;
+ printf("The greatest of three numbers is: %d",s);
+}
+int main()
+{
+    int a,b,c,d;
     a=get();
     b=get();
     c=get();
-    logic(a,b,c);
-    
+    d=logic(a,b,c);
+    output(d);
+    return 0;
 }
