@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<conio.h>
 int get()
 {
     int a;
@@ -16,23 +15,27 @@ int logic(int a,int b, int c)
         if(b>a)
          return b;
     }
-    
+
     if(c>a)
     {
         if(c>b)
          return c;
+        if(c<b)
+         return b;
     }
-   
 }
-int output()
+void output(int ans)
 {
-printf();
+printf("The greatest of three numbers is %d",ans);
 }
-void main()
+int main()
 {
-    int a,b,c;
+    int a,b,c,d;
     a=get();
     b=get();
     c=get();
-    logic(a,b,c);
+    d=logic(a,b,c);
+    output(d);
 }
+
+
