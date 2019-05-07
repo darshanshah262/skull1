@@ -29,7 +29,11 @@ struct frac gcd(struct frac s)
 {
         struct frac j;
         int i;
-        for(i=1;i<=s.num && i<=s.den;i++)
+        if(s.num<s.den)
+                i=s.num;
+        if(s.dem<s.num)
+                i=s.den;
+        for(;i<=s.num && i<=s.den;i--)
         {
                 if(s.num%i==0 && s.den%i==0)
                 {
@@ -39,7 +43,18 @@ struct frac gcd(struct frac s)
                         s.den=s.den/j.den;
                         return s;
                 }
-                else
-                        return s;
         }
 }
+int main()
+{
+
+        struct frac s,s1,s2,s3;
+        s=input();
+        printf("%d/%d\n",s.num,s.den);
+        s1=get();
+        printf("%d/%d\n",s1.num,s1.den);
+        s2=compute(s,s1);
+        s3=gcd(s2);
+        printf("The fraction is: %d/%d",s3.num,s3.den);
+}
+
