@@ -6,18 +6,18 @@ int getdatan()
         scanf("%d",&a);
         return a;
 }
-int getdaatad()
+int getdatad()
 {
         int b;
         printf("Enter the denominator\n");
         scanf("%d",&b);
         return b;
 }
-int compute(int a,int c,int b,int d,int *x3,int *x4)
+void compute(int a,int c,int b,int d,int *x3,int *x4)
 {
         //int x3,x4;
-        x3=(a*d)+(b*c);
-        x4=b+d;
+        *x3=(a*d)+(b*c);
+        *x4=b+d;
 }
 void output(int a,int b)
 {
@@ -25,14 +25,16 @@ void output(int a,int b)
 }
 int main()
 {
-        int x1,y1,x2,y2,x3,x4,ans;
+        int x1,y1,x2,y2,x3,x4;
         x1=getdatan();
         y1=getdatad();
-        printf("The first fraction is: %d/%d",x1,y1);
+        printf("The first fraction is: %d/%d\n",x1,y1);
         x2=getdatan();
         y2=getdatad();
-        printf("The second fraction is: %d/%d",x2,y2);
+        printf("The second fraction is: %d/%d\n",x2,y2);
         compute(x1,x2,y1,y2,&x3,&x4);
         output(x3,x4);
         return 0;
 }
+
+
