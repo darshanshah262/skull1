@@ -28,4 +28,11 @@ int main()
         printf("%d/%d\n",s1.num,s1.den);
 
 
+        int a;
+        a=(s.num*s1.den)+(s.den*s1.num);
+        int b;
+        b=s.den+s1.den;
+        printf("%d/%d",a,b);
 }
+
+
