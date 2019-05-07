@@ -13,11 +13,11 @@ int getdatad()
         scanf("%d",&b);
         return b;
 }
-void compute(int a,int c,int b,int d,int *x3,int *x4)
+void compute(int num1,int den1,int num2,int den2,int *x3,int *x4)
 {
         //int x3,x4;
-        *x3=(a*d)+(b*c);
-        *x4=b+d;
+        *x3=(num1*den2)+(num2*den1);
+        *x4=den1+den2;
 }
 void output(int a,int b)
 {
@@ -32,9 +32,7 @@ int main()
         x2=getdatan();
         y2=getdatad();
         printf("The second fraction is: %d/%d\n",x2,y2);
-        compute(x1,x2,y1,y2,&x3,&x4);
+        compute(x1,y1,x2,y2,&x3,&x4);
         output(x3,x4);
         return 0;
 }
-
-
