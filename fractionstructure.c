@@ -31,7 +31,7 @@ struct frac gcd(struct frac s)
         int i;
         if(s.num<s.den)
                 i=s.num;
-        if(s.dem<s.num)
+        if(s.den<s.num)
                 i=s.den;
         for(;i<=s.num && i<=s.den;i--)
         {
@@ -44,6 +44,7 @@ struct frac gcd(struct frac s)
                         return s;
                 }
         }
+        return s;
 }
 int main()
 {
