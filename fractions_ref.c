@@ -7,8 +7,7 @@ struct frac
 struct frac input(struct frac *s1)
 {
         printf("Enter the nume and deno \n");
-        scanf("%d %d",(*s1).num,(*s1).den);
-        //printf("%d\n",s1->num);
+        scanf("%d %d",&s1->num,&s1->den);
 }
 struct frac compute(struct frac p,struct frac q)
 {
