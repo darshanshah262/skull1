@@ -1,3 +1,4 @@
+
 #include<stdio.h>
 struct frac
 {
@@ -16,30 +17,58 @@ struct frac get(int n,struct frac s[n])
         }
 }
 
-struct frac compute(int n,struct frac s1[n])
+
+int gcdofnumbers(int val1, int val2)
 {
-        int i;
-        struct frac s[n];
-        for(i=0;i<n;i++)
-        {
-                s[i].num=(s1[i].num*s1[i+1].den)+(s1[i+1].num*s1[i].den);
-                s[i].den=s1[i].den*s1[i+1].den;
-        }
+      int temp;
+      if(val1 > val2)
+      {
+            temp = val1;
+            val1 = val2;
+            val2 = temp;
+      }
+      if(val2 % val1 == 0)
+      {
+            return val1;
+      }
+      else
+      {
+            return gcdofnumbers(val2 % val1, val1);
+      }
+}
+
+
+int lcmofnumbers(int num1, int num2)
+{
+      int gcd = gcdofnumbers(num1, num2);
+      return (num1 * num2) / gcd;
+}
+
+struct frac compute(int n,struct frac s[n],struct frac s1[n])
+{
+
 }
 
 int main()
 {
-        int n,i;
+        int array[20],value = 1,n,i=0;
         printf("Enter the number of fractions to be added\n");
         scanf("%d",&n);
-        struct frac s[n];
+        struct frac s[n],s1[n];
         get(n,s);
+        while(i < n)
+        {
+               value = lcmofnumbers(value,s[i].den);
+               i++;
+        }
+        printf("\nLCM of given numbers = %d\n", value);
         for(i=0;i<n;i++)
         {
-                printf("The %d fraction is:",i+1);
+                printf("The %d fraction is\n:",i+1);
                 printf("%d/%d\n",s[i].num,s[i].den);
         }
-        compute(n,s);
+        compute(n,s,s1);
         return 0;
 }
+
 
